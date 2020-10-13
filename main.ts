@@ -11,19 +11,15 @@ let isMovingRight = 0
 basic.forever(function () {
     isMovingRight += 1
     for (let y = 0; y <= 4; y++) {
-        if (isMovingRight) {
-            for (let x = 0; x <= 4; x++) {
+        for (let x = 0; x <= 4; x++) {
+            if (isMovingRight) {
                 led.plot(x, y)
-                basic.pause(100)
-            }
-            isMovingRight = 0
-        } else {
-            for (let x = 0; x <= 4; x++) {
+            } else {
                 led.plot(4 - x, y)
-                basic.pause(100)
             }
-            isMovingRight = 1
+            basic.pause(100)
         }
+        isMovingRight = isMovingRight * -1 + 1
     }
     basic.clearScreen()
 })
