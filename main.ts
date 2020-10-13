@@ -6,7 +6,7 @@ let isMovingRight = 0
  * 
  * # isMovingRight 為 0 (False) 時
  * 
- * 表示向左點燈 (非左)
+ * 表示向左點燈 (非右)
  */
 basic.forever(function () {
     isMovingRight += 1
